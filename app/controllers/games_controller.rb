@@ -2,7 +2,7 @@ require 'open-uri'
 class GamesController < ApplicationController
   def new
     # TODO: display a new random grid and a form
-    @letters = 8.times.map { ('A'..'Z').to_a.sample } + 2.times.map { ['E','O', 'U', 'A', 'I'].sample }
+    @letters = 12.times.map { ('A'..'Z').to_a.sample } + 4.times.map { ['E','O', 'U', 'A', 'I'].sample }
   end
 
   def score

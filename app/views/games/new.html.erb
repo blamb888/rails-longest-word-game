@@ -1,19 +1,26 @@
-<div class="container">
-  <h1>This is the new game!</h1>
-  <ul>
-    <% @letters.each do |letter| %>
-      <li style="display: inline;"><%= letter.capitalize %></li>
-      <% end %>
-  </ul>
-    <h1>This is where you guess!</h1>
-  <form action="score" method="POST">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :letters, @letters %>
-    <div class="mb-3">
-      <label for="" class="form-label">What is the longest word you can find?</label>
-      <input type="text" name="guess" class="form-control" id="question" aria-describedby="">
-      <div id="emailHelp" class="form-text">There is no such thing as a stupid guess.</div>
+<div class="container pt-3">
+  <div class="card-container" style="width: 18rem;">
+    <div class="card" style="width: 24rem;">
+      <h1>This is a new game!</h1>
+        <div class="letters">
+          <ul>
+            <% @letters.each do |letter| %>
+              <li id="letter-box" class="btn btn-success"><%= letter.capitalize %></li>
+              <% end %>
+          </ul>
+        </div>
+        <h1>This is where you guess!</h1>
+        <form action="score" method="POST">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :letters, @letters %>
+          <div class="mb-3">
+            <label for="" class="form-label">What is the longest word you can find?</label>
+            <input type="text" name="guess" class="form-control" id="userInput" aria-describedby="">
+            <div id="emailHelp" class="form-text">There is no such thing as a stupid guess.</div>
+          </div>
+        </form>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </div>
+<%= javascript_pack_tag 'my_js' %>
