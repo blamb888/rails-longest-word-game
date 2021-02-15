@@ -3,11 +3,9 @@
     <div class="card" style="width: 24rem;">
       <h1>This is a new game!</h1>
         <div class="letters">
-          <ul>
             <% @letters.each do |letter| %>
-              <li id="letter-box" class="btn btn-success"><%= letter.capitalize %></li>
+              <button id="letter-box" class="btn btn-success"><%= letter.capitalize %></button>
               <% end %>
-          </ul>
         </div>
         <h1>This is where you guess!</h1>
         <form action="score" method="POST">

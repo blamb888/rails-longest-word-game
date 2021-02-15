@@ -42,8 +42,15 @@ body {
   align-items: center;
   justify-content: center;
 }
-ul li {
-  display: inline;
+.letters {
+  display: flex;
+  flex-wrap: wrap;
   padding: 8px 16px;
   margin: 8px;
+  justify-content: center;
 }
+.letters button {
+  margin: 2px;
+  width: 64px;
+}
+
